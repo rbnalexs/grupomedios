@@ -82,7 +82,7 @@ get_header(); ?>
             elseif ($i == 2) :
       ?>
         <div class="col-md-4 notasPrin"><!--notas principales-->
-          <span class="imgCuadro"><a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('medium'); ?>"></a></span>
+          <span class="imgCuadro"><a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('large'); ?>"></a></span>
           <div class="infoCuadro">
             <span class="etiquetaCat amarilla"><a href="<?php echo esc_url($cat_link); ?>"><?php echo esc_html($cat_name); ?></a></span>
             <span class="titNPrin chico"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
@@ -210,7 +210,7 @@ get_header(); ?>
                 <div class="notaGris transparente">
                   <span class="imgRecorte grande">
                     <?php if (has_post_thumbnail()) : ?>
-                      <?php the_post_thumbnail('medium'); ?>
+                      <?php the_post_thumbnail('large'); ?>
                     <?php else : ?>
                       <img src="<?php echo get_template_directory_uri(); ?>/images/fotoRelleno.jpg" alt="Imagen genérica">
                     <?php endif; ?>
@@ -376,7 +376,7 @@ get_header(); ?>
             $posts_array[] = array(
               'title' => get_the_title(),
               'link' => get_permalink(),
-              'thumb' => has_post_thumbnail() ? get_the_post_thumbnail(null, 'medium') : '<img src="' . get_template_directory_uri() . '/images/fotoRelleno.jpg" alt="Imagen genérica">',
+              'thumb' => has_post_thumbnail() ? get_the_post_thumbnail(null, 'full') : '<img src="' . get_template_directory_uri() . '/images/fotoRelleno.jpg" alt="Imagen genérica">',
             );
           endwhile;
           wp_reset_postdata();
